@@ -1,14 +1,17 @@
 import os
 from openai_logic import ChatGPT
-from fastapi import FastAPI, Request, HTTPException, Depends
+from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
 
+templates = Jinja2Templates(directory="templates")
+
 @app.get("/")
-def get_root():
-    return {"Hello": "World!"}
+def get_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+    # return {"Hello": "World!"}
 
 
 @app.get("/haiku", response_model=dict)
@@ -28,4 +31,4 @@ def get_haiku():
     haiku = haiku_generator.generate(messages)
 
     # return as json and strip newline chars
-    return {"haiku": haiku.strip().replace("\n", " ")}
+    return {"haiku": haiku.strip()}
