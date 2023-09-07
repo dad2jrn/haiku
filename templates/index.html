@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haiku Generator</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="/static/script.js"></script>
 </head>
 <body class="bg-light">
     <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
         <h1>Haiku Generator</h1>
         <button onclick="fetchHaiku()" class="btn btn-primary mt-4">Generate Haiku</button>
-        <div id="haiku" class="haiku-content mt-4 text-center"></div>
+        <div class="d-flex align-items-center mt-4">
+            <div id="haiku" class="haiku-content text-center mr-3"></div>
+            <span onclick="copyToClipboard()" class="btn btn-link p-0 border-0" title="Copy to clipboard" id="copyGlyph" style="display: none;">
+                <i class="fas fa-clipboard"></i>
+            </span>
+        </div>
     </div>
 
     <script src="script.js"></script>
