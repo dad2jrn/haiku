@@ -11,7 +11,7 @@ def get_root():
     return {"Hello": "World!"}
 
 
-@app.get("/haiku")
+@app.get("/haiku", response_model=dict)
 def get_haiku():
     messages = [
         {
@@ -27,4 +27,5 @@ def get_haiku():
     haiku_generator = ChatGPT(api_key)
     haiku = haiku_generator.generate(messages)
 
-    return haiku.strip()
+    # return as json
+    return {"haiku": haiku.strip()}
