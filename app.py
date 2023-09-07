@@ -28,4 +28,4 @@ def get_haiku():
     haiku = haiku_generator.generate(messages)
 
     # return as json and strip newline chars
-    return {"haiku": haiku.strip().replace('\n', ' ')}
+    return {"haiku": haiku.strip().replace("\n", " ")}
