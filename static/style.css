@@ -7,3 +7,15 @@
     cursor: pointer;
     color: #007BFF; /* Bootstrap primary color for hover effect */
 }
+body {
+    /* Apply the haikus background image */
+    background-image:
+        /* Radial gradient fading to white in the center */
+        radial-gradient(circle at center, rgba(255,255,255,0) 40%, rgba(255,255,255,1) 70%),
+        /* Your haikus background */
+        url('/assets/bg.jpg');
+
+    background-size: cover;   /* Cover the viewport */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fix the background */
+}
