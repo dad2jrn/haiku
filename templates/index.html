@@ -4,25 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haiku Generator</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="/static/script.js"></script>
 </head>
-<body>
-    <button onclick="fetchHaiku()">Generate Haiku</button>
-    <div id="haiku"></div>
+<body class="bg-light">
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+        <h1>Haiku Generator</h1>
+        <button onclick="fetchHaiku()" class="btn btn-primary mt-4">Generate Haiku</button>
+        <div id="haiku" class="haiku-content mt-4 text-center"></div>
+    </div>
 
-    <script>
-        function fetchHaiku() {
-            fetch('/haiku')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('haiku').textContent = data.haiku;
-                })
-                .catch(err => {
-                    console.error(err);
-                    alert('Error fetching haiku.');
-                });
-        }
-    </script>
+    <script src="script.js"></script>
+    <!-- Optional Bootstrap JS components, if needed later -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
