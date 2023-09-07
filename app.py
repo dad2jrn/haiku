@@ -27,5 +27,5 @@ def get_haiku():
     haiku_generator = ChatGPT(api_key)
     haiku = haiku_generator.generate(messages)
 
-    # return as json
-    return {"haiku": haiku.strip()}
+    # return as json and strip newline chars
+    return {"haiku": haiku.strip().replace('\n', ' ')}
