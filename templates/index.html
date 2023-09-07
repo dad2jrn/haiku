@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiku Generator</title>
+    <style>
+        #haiku {
+            font-size: 1.5em;
+            font-family: 'Arial', sans-serif;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fetchHaiku()">Generate Haiku</button>
+    <div id="haiku"></div>
+
+    <script>
+        function fetchHaiku() {
+            fetch('/haiku')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('haiku').textContent = data.haiku;
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Error fetching haiku.');
+                });
+        }
+    </script>
+</body>
+</html>

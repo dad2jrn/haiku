@@ -8,6 +8,7 @@ fastapi = "*"
 openai = "*"
 uvicorn = {version = "*", extras = ["standard"]}
 black = "*"
+jinja2 = "*"
 
 [dev-packages]
 

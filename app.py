@@ -1,7 +1,7 @@
 import os
 from openai_logic import ChatGPT
-from fastapi import FastAPI, HTTPException, Depends
-
+from fastapi import FastAPI, Request, HTTPException, Depends
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
