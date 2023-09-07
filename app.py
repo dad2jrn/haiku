@@ -3,6 +3,8 @@ from openai_logic import ChatGPT
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+
 
 app = FastAPI()
 
@@ -21,6 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
