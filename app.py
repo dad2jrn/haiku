@@ -2,9 +2,24 @@ import os
 from openai_logic import ChatGPT
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# Add middleware for CORS handling
+origins = [
+    "http://localhost:8000",
+    # "https://example.com",
+    # add other origins if necessary
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 templates = Jinja2Templates(directory="templates")
 
