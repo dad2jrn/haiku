@@ -10,10 +10,10 @@
 body {
     /* Apply the haikus background image */
     background-image:
-        /* Radial gradient fading to white in the center */
-        radial-gradient(circle at center, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 60%),
+        /* Elliptical gradient fading to white in the center */
+        radial-gradient(ellipse at center, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 60%),
         /* Your haikus background */
-        url('/static/bg.svg');
+        url('/static/bg.jpg');
 
     background-size: cover;   /* Cover the viewport */
     background-repeat: no-repeat; /* Do not repeat the image */
